@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    image: tatsumax123/my_images:rails-sqlite
+    volumes:
+      - .:/app
+
+    ports:
+      - "3000:3000"
+
+
