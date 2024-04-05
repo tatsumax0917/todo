@@ -9,18 +9,17 @@
       <ul class="d-none d-md-flex">
         <% if user_signed_in? %>
           <li class="nav-item d-flex me-3">
-            <%= link_to "ユーザー名", edit_user_registration_path, class: "nav-link", aria: { current: "page" } %>
+            <%= link_to current_user.name, edit_user_registration_path, class: "nav-link", aria: { current: "page" } %>
           </li>
           <li class="nav-item d-flex me-3">
-            <%= link_to "ログアウト", data: { turbo_method: :delete }, class: "nav-link" %>
+            <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
           </li>
         <% else %>
           <li class="nav-item d-flex me-3">
-            <a class="nav-link" href="#">新規登録</a>
-            link
+            <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
           </li>
           <li class="nav-item d-flex me-3">
-            <a class="nav-link" href="#">ログイン</a>
+            <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>
@@ -35,16 +34,17 @@
             <% if user_signed_in? %>
               <li class="nav-item d-flex me-3">
               <li class="nav-item">
-                <%= link_to "ユーザー名", edit_user_registration_path, class: "nav-link", aria: { current: "page" } %>
+                <%= link_to current_user.name, edit_user_registration_path, class: "nav-link", aria: { current: "page" } %>
               </li>
-                <%= link_to "ログアウト", data: { turbo_method: :delete }, class: "nav-link" %>
+                <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
               </li>
             <% else %>
-              <li class="nav-item">
-                <a class="nav-link" href="#">新規登録</a>
+              <li class="nav-item d-flex me-3">
+                <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">ログイン</a>
+                <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
               </li>
             <% end %>
           </ul>
