@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root 'task#index'
+  devise_for :users
+  root 'users#top'
 end

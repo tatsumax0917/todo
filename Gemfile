@@ -32,6 +32,10 @@ gem "jbuilder"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
+# devise
+gem "devise"
+
+# bootstrap
 gem "bootstrap"
 gem "sassc-rails"
 gem "mini_racer"
