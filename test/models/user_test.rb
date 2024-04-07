@@ -1,11 +1,17 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @user = User.create(name: "tanaka", email: "tanaka@gmail.com",
+                        password: "tanakatanaka", password_confirmation: "tanakatanaka")
+  end
 
-  # test "nameの有効性チェック" do
+  test "@userの有効性の確認" do
+    assert @user.valid?
+  end
 
-  # end
+  test "nameが空欄だとエラーになる" do
+    @user.name = ""
+    assert_not @user.valid?
+  end
 end
