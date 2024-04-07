@@ -76,4 +76,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "minitest-reporters",       "1.6.0"
+  gem 'factory_bot_rails', '~> 6.2'
 end
