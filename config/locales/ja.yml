@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: ユーザー名
+        email: Eメール
+        password: パスワード
+        password_confirmation: 確認用パスワード
+  errors:
+    messages:
+      not_saved: "もう一度入力してください"
+    
