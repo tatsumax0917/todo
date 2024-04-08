@@ -3,6 +3,8 @@ require_relative "../config/environment"
 require "rails/test_help"
 require "minitest/reporters"
 Minitest::Reporters.use!
+require 'factory_bot'
+FactoryBot.find_definitions
 
 module ActiveSupport
   class TestCase

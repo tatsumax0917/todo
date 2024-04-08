@@ -75,6 +75,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem "minitest-reporters",       "1.6.0"
-  gem 'factory_bot_rails', '~> 6.2'
+  gem "minitest-reporters"
+  gem 'factory_bot'
+  gem 'minitest'
 end
