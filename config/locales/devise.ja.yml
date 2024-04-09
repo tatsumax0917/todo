@@ -1,0 +1,38 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: ユーザー名
+        email: Eメール
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        current_password: 現在のパスワード
+  errors:
+    messages:
+      name: "ユーザ名を入力してください"
+      email: "Eメールを入力してください"
+      password: "パスワードを入力してください"
+      confirmation: "パスワードが一致しません"
+      already_confirmed: "アカウントはすでに確認されています"
+      not_found_in_database: "アカウントが見つかりませんでした"
+      not_locked: "アカウントはロックされていません"
+      invalid: "Eメールまたはパスワードが間違っています"
+      invalid_token: "トークンが無効です"
+      timeout: "セッションがタイムアウトしました。もう一度ログインしてください。"
+      not_saved:
+        name: "ユーザ名を入力してください"
+        email: "Eメールを入力してください"
+        password: "パスワードを入力してください"
+        password_confirmation: "パスワードは8文字以上で入力してください"
+        # one: "%{resource}は保存できませんでした: 1つのエラーがあります"
+        # other: "%{resource}は保存できませんでした: %{count}つのエラーがあります"
+  devise:
+    sessions:
+      signed_in: "ログインしました"
+      signed_out: "ログアウトしました"
+    failure:
+      unauthenticated: "ログインして再度アクセスしてください"
+    failure:
+      unauthenticated: "このページにアクセスするためにはログインが必要です"
