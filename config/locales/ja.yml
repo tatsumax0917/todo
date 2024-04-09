@@ -11,4 +11,11 @@ ja:
   errors:
     messages:
       not_saved: "もう一度入力してください"
-    
+  devise:
+    sessions:
+      signed_in: "ログインしました"
+      signed_out: "ログアウトしました"
+    failure:
+      unauthenticated: "ログインして再度アクセスしてください"
+    failure:
+      unauthenticated: "このページにアクセスするためにはログインが必要です"

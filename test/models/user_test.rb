@@ -2,8 +2,6 @@ require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    # @user = User.create(name: "tanaka", email: "tanaka@gmail.com",
-    #                     password: "tanakatanaka", password_confirmation: "tanakatanaka")
     @user = FactoryBot.build(:user)
   end
 

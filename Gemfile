@@ -78,4 +78,6 @@ group :test do
   gem "minitest-reporters"
   gem 'factory_bot'
   gem 'minitest'
+  gem 'rails-controller-testing'
+
 end

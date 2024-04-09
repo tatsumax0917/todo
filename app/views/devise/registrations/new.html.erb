@@ -4,12 +4,12 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">             
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control mb-4 mt-2' %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autocomplete: "email", class: 'form-control mb-4 mt-2' %>
   </div>
 
@@ -17,12 +17,12 @@
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <span>(<%= @minimum_password_length %>文字以上)</span>
-    <% end %><br />
+    <% end %>
     <%= f.password_field :password, autocomplete: "new-password", class: 'form-control mb-4 mt-2' %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control mb-4 mt-2' %>
   </div>
 
