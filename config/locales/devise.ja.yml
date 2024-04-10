@@ -36,3 +36,7 @@ ja:
       unauthenticated: "ログインして再度アクセスしてください"
     failure:
       unauthenticated: "このページにアクセスするためにはログインが必要です"
+    registrations:
+      destroyed: "アカウントを削除しました"
+      signed_up: "アカウントの作成が完了しました"
+      
