@@ -6,7 +6,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "ユーザーの有効性の確認する" do
-    assert @user.valid?
+    assert @user.valid?, "ユーザーが有効じゃありません
+    "
   end
 
   # name

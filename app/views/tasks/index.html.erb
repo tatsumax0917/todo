@@ -1,1 +1,8 @@
-<h1>タスクの入力</h1>
+<%= form_with(model: @task) do |f| %>
+  <%= f.text_field :content %>  
+  <%= f.submit "登録", class: "btn btn-primary" %>
+<% end %>
+
+<% @tasks.each do |task| %>
+  <p><%= task.content %></p>
+<% end %> 
