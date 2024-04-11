@@ -5,15 +5,7 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
     @user = FactoryBot.create(:user)
   end
 
-  # test "新規登録時の画面遷移（成功時）" do
-  #   get new_user_registration_path
-  #   assert_template 'devise/registrations/new'
-  #   post user_registration_path, params: { user: { name: "tanaka",email: "tanaka@gmail.com", password: "tanakatanaka",password_confirmation: "tanakatanaka" }}
-
-  #   follow_redirect!
-  #   assert_template 'tasks/index'
-  #   assert_not flash.empty?
-  # end
+  
   test "新規登録時のテスト" do
     user_attributes = { name: "Test User", email: "test@example.com", password: "password", password_confirmation: "password" }
     get new_user_registration_path
@@ -21,7 +13,6 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
     post user_registration_path, params: { user: user_attributes }
     assert_response :redirect
     follow_redirect!
-
     assert_redirected_to tasks_path
     assert_not flash.empty?
   end

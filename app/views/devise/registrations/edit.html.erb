@@ -40,10 +40,10 @@
   </div>
 <% end %>
 
-<%= link_to "タスク管理へ戻る", root_path, class: 'back-btn form-control btn btn-secondary mb-4 mt-2' %>
+<%= link_to "タスク管理へ戻る", root_path, class: 'w-50 mx-auto form-control btn btn-secondary mb-4 mt-2' %>
 
 <div>
-<%= button_to "アカウント削除", registration_path(resource_name), data: {  turbo_confirm: "本当に削除しますか？" }, method: :delete, class: "account-delete-btn form-control btn btn-danger mb-4 mt-2" %>
+<%= button_to "アカウント削除", registration_path(resource_name), data: {  turbo_confirm: "本当に削除しますか？" }, method: :delete, class: "w-50 mx-auto  form-control btn btn-danger mb-4 mt-2" %>
 
 </div>
 

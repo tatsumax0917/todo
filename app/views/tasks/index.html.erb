@@ -1,6 +1,12 @@
 <%= form_with(model: @task) do |f| %>
-  <%= f.text_field :content %>  
-  <%= f.submit "登録", class: "btn btn-primary" %>
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-8">
+      <%= f.text_field :content, class: 'form-control mb-4 mt-2' %>  
+    </div>
+    <div class="col-1">
+      <%= f.submit "登録", class: "btn btn-primary mb-4 mt-2" %>
+    </div>
+  </div>
 <% end %>
 
 <% @tasks.each do |task| %>
