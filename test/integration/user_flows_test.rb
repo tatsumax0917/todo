@@ -5,7 +5,7 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
     @user = FactoryBot.create(:user)
   end
 
-  
+
   test "新規登録時のテスト" do
     user_attributes = { name: "Test User", email: "test@example.com", password: "password", password_confirmation: "password" }
     get new_user_registration_path
@@ -18,22 +18,27 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
   end
 
   test "ログイン時の画面遷移" do
+    user_attr = { name: @user.name, password: @user.password }
     get new_user_session_path
     assert_template 'devise/sessions/new'
-    post user_session_path, params: { user: { name: @user.name, password: @user.password } }
+    post user_session_path, params: { user: user_attr }
+    sign_in @user
     assert_redirected_to root_path
     follow_redirect!
     assert_redirected_to tasks_path
+    follow_redirect!
+    assert_template 'tasks/index'
     assert_not flash.empty?
-    assert_select 'input[type=text]'
+    assert_select "form input[type=text]"
   end
 
   test "ログアウト時の画面遷移" do
+    user_attr = { name: @user.name, password: @user.password }
     get root_path
     assert_template 'users/top'
     get new_user_session_path
     assert_template 'devise/sessions/new'
-    post user_session_path, params: { user: { name: @user.name, password: @user.password } }
+    post user_session_path, params: { user: user_attr }
     delete destroy_user_session_path
     assert_redirected_to root_path
     follow_redirect!

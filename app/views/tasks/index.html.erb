@@ -9,6 +9,15 @@
   </div>
 <% end %>
 
-<% @tasks.each do |task| %>
-  <p><%= task.content %></p>
-<% end %> 
+  <% @tasks.each do |task| %>
+    <div class="task row mt-3">
+      <div class="task-item col-6 ">
+        <%= task.content %>
+      </div>
+      <div class="col-5">
+        <%= link_to "完了", "#", class: "btn btn-success" %>
+        <%= link_to "編集", "#", class: "btn btn-warning" %>
+        <%= link_to "削除", "#", class: "btn btn-danger" %>
+      </div>
+    </div>
+  <% end %> 
