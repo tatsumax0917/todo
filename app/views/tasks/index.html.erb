@@ -1,10 +1,10 @@
 <%= form_with(model: @task) do |f| %>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mt-5">
     <div class="col-md-6 col-8">
-      <%= f.text_field :content, class: 'form-control mb-4 mt-2' %>  
+      <%= f.text_field :content, class: 'form-control mb-5', autofocus: true %>  
     </div>
     <div class="col-1">
-      <%= f.submit "登録", class: "btn btn-outline-primary mb-4 mt-2" %>
+      <%= f.submit "登録", class: "btn btn-outline-primary mb-4" %>
     </div>
   </div>
 <% end %>
@@ -15,9 +15,15 @@
       <%= task.content %>
     </div>
     <div class="col-5">
-      <%= link_to "完了", "#", class: "btn btn-outline-success" %>
-      <%= link_to "編集", "#", class: "btn btn-outline-warning" %>
-      <%= link_to "削除", task_path(task.id), class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } %>
+      <%= link_to "#", class: "btn fs-5" do %>
+        <i class="bi bi-check2"></i>
+      <% end %>
+      <%= link_to edit_task_path(task.id), class: "btn fs-5" do %>
+        <i class="bi bi-pencil"></i>
+      <% end %>
+      <%= link_to task_path(task.id), class: "btn fs-5", data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } do %>
+        <i class="bi bi-trash"></i>
+      <% end %>
     </div>
   </div>
 <% end %> 
