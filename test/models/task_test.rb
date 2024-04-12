@@ -3,6 +3,7 @@ require "test_helper"
 class TaskTest < ActiveSupport::TestCase
   def setup
     @user = FactoryBot.create(:user)
+    @task = FactoryBot.create(:task, user: @user)
   end
 
   test "Taskの有効性の検証" do
@@ -25,8 +26,14 @@ class TaskTest < ActiveSupport::TestCase
   test "タスク登録（失敗）" do
     content = 'a' * 51
     task = Task.new(content: content, user_id: @user.id)
-    assert_difference 'Task.count', 0 do
+    assert_no_difference 'Task.count' do
       task.save
+    end
+  end
+
+  test "タスク削除ボタンの動作確認(成功)" do
+    assert_difference 'Task.count', -1 do
+      @task.destroy
     end
   end
 

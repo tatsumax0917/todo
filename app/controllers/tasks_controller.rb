@@ -8,9 +8,14 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build(task_params)
     if @task.save
-      flash[:notice] = "タスクが追加されました"
       redirect_to root_path
     end
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to root_path, status: :see_other
   end
 
   private

@@ -3,8 +3,8 @@ require "test_helper"
 class UserFlowsTest < ActionDispatch::IntegrationTest
   def setup
     @user = FactoryBot.create(:user)
+    @task = FactoryBot.create(:taks, user: @user)
   end
-
 
   test "新規登録時のテスト" do
     user_attributes = { name: "Test User", email: "test@example.com", password: "password", password_confirmation: "password" }
@@ -45,4 +45,6 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
     assert_template 'users/top'
     assert_not flash.empty?
   end
+
+  
 end

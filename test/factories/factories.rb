@@ -1,9 +1,16 @@
 FactoryBot.define do
-  # 各モデルごとにファクトリーを定義
   factory :user do
     name { "tanaka" }
     email { "tanaka@gmail.com" }
     password { "tanakatanaka"}
+  end
+end
+
+FactoryBot.define do
+  factory :task do
+    content { "テスト投稿" }
+    done { false }
+    association :user
   end
 end
 
