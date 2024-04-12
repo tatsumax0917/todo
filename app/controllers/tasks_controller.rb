@@ -29,7 +29,7 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to root_path, status: :see_other
+    # redirect_to root_path, status: :see_other
   end
 
   private

@@ -10,20 +10,22 @@
 <% end %>
 
 <% @tasks.each do |task| %>
-  <div class="task row mt-3">
-    <div class="task-item col-6 ">
-      <%= task.content %>
+  <%= turbo_frame_tag task do %>
+    <div class="task row mt-3">
+      <div class="task-item col-6 ">
+        <%= task.content %>
+      </div>
+      <div class="col-5">
+        <%= link_to "#", class: "btn fs-5" do %>
+          <i class="bi bi-check2"></i>
+        <% end %>
+        <%= link_to edit_task_path(task.id), class: "btn fs-5" do %>
+          <i class="bi bi-pencil"></i>
+        <% end %>
+        <%= link_to task_path(task.id), class: "btn fs-5", data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } do %>
+          <i class="bi bi-trash"></i>
+        <% end %>
+      </div>
     </div>
-    <div class="col-5">
-      <%= link_to "#", class: "btn fs-5" do %>
-        <i class="bi bi-check2"></i>
-      <% end %>
-      <%= link_to edit_task_path(task.id), class: "btn fs-5" do %>
-        <i class="bi bi-pencil"></i>
-      <% end %>
-      <%= link_to task_path(task.id), class: "btn fs-5", data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } do %>
-        <i class="bi bi-trash"></i>
-      <% end %>
-    </div>
-  </div>
-<% end %> 
+  <% end %>
+<% end %>
