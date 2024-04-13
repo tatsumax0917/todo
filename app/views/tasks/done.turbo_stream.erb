@@ -1,0 +1,9 @@
+<%= turbo_stream.update "task_#{@task.id}_done" do %>
+  <% if @task.done %>
+    <i class="bi bi-check-square"></i>
+  <% else %>
+    <i class="bi bi-square"></i>
+  <% end %>
+<% end %> 
+
+

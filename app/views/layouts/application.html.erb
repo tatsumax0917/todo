@@ -15,6 +15,9 @@
   <% if flash.notice.present? %>
     <div class="alert alert-success m-3"><%= flash.notice %></div>
   <% end %>
+  <% if flash.alert.present? %>
+    <div class="alert alert-danger m-3"><%= flash.alert %></div>
+  <% end %>
   <div class="container main text-center">
     <%= yield %>
     <%
