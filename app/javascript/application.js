@@ -13,6 +13,3 @@ window.$ = jquery
 //   alert('ok');
 // });
 
-document.addEventListener('turbo:submit-end', function() {
-  location.reload();
-});
