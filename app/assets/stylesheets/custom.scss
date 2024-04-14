@@ -47,5 +47,24 @@ a {
   input[type="checkbox"] {
     width: 20px;
   }
+  label {
+    margin-top: 20px;
+  }
 }
 
+label.required:after {
+  content: " *";
+  color: red;
+}
+form > .field{ height: 110px;}
+.form-control::placeholder {
+  color: rgb(180, 180, 180) ;
+}
+// error style
+.inline-alert {
+  padding: 0;
+  padding-top: 5px;
+  text-align: left;
+  margin: 0 auto;
+  width: 50%;
+}

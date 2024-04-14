@@ -1,0 +1,12 @@
+<% if resource.errors.include?(attribute) %>
+  <div class="inline-alert text-danger" id="error_explanation" data-turbo-cache="false">
+    <% if attribute == :password %>
+      <% error_index = params[:error_num].to_i %>
+      <%= resource.errors.full_messages_for(attribute)[error_index] %>
+    <% else %>
+      <% resource.errors.full_messages_for(attribute).each do |error_message| %>
+        <%= error_message %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

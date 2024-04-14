@@ -9,7 +9,6 @@
   </div>
 <% end %>
 
-<div id="task_body">
 <% @tasks.each do |task| %>
   <%= turbo_frame_tag task do %>
     <div class="task row mt-3">
@@ -32,4 +31,3 @@
     </div>
   <% end %>
 <% end %>
-</div>

@@ -34,7 +34,7 @@ ja:
       signed_out: "ログアウトしました"
     failure:
       unauthenticated: "ログインして再度アクセスしてください"
-    failure:
+      not_found_in_database: "アカウントが見つかりませんでした"
       unauthenticated: "このページにアクセスするためにはログインが必要です"
     registrations:
       destroyed: "アカウントを削除しました"
