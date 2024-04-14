@@ -7,3 +7,10 @@
 <% end %> 
 
 
+<%= turbo_stream.update "task_#{@task.id}_content" do %>
+        <% if @task.done %>
+          <%= content_tag :div, @task.content, class: "done-task" %>
+        <% else %>
+          <%= @task.content %>
+        <% end %>
+<% end %>

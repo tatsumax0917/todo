@@ -32,6 +32,9 @@ a {
   }
 }
 
+.done-task {
+  text-decoration: line-through;
+}
 
 // 編集、新規登録などのフォーム
 .field, .actions {

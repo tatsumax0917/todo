@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :logged_in?
 
   def index
-    @tasks = Task.all
+    @tasks = Task.where(user_id: current_user.id)
     @task = Task.new
   end
 
@@ -35,17 +35,18 @@ class TasksController < ApplicationController
 
   def done
     @task = Task.find(params[:id])
-      if @task.done
-        @task.done = false
-      else
-        @task.done = true
+    # if @task.done
+    #   @task.done = false
+    # else
+    #   @task.done = true
+    # end
+    @task.done = !@task.done
+
+      if @task.update(task_params)
+        respond_to do |format|
+          format.turbo_stream
+        end
       end
-
-
-    respond_to do |format|
-
-      format.turbo_stream {@task.update(task_params)}
-    end
   end
 
   private
