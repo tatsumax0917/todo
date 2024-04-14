@@ -1,16 +1,8 @@
 <%= turbo_stream.update "task_#{@task.id}_done" do %>
-  <% if @task.done %>
-    <i class="bi bi-check-square"></i>
-  <% else %>
-    <i class="bi bi-square"></i>
-  <% end %>
+  <%= render 'partials/done', task: @task %>
 <% end %> 
 
 
 <%= turbo_stream.update "task_#{@task.id}_content" do %>
-        <% if @task.done %>
-          <%= content_tag :div, @task.content, class: "done-task" %>
-        <% else %>
-          <%= @task.content %>
-        <% end %>
-<% end %>
+  <%= render 'partials/task_content', task: @task %>
+<% end %> 

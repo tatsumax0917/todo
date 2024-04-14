@@ -1,0 +1,5 @@
+<% if task.done %>
+  <%= content_tag :div, task.content, class: "done-task" %>
+<% else %>
+  <%= task.content %>
+<% end %>
