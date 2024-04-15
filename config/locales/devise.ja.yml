@@ -21,13 +21,13 @@ ja:
       invalid: "Eメールまたはパスワードが間違っています"
       invalid_token: "トークンが無効です"
       timeout: "セッションがタイムアウトしました。もう一度ログインしてください。"
+      name: "ユーザ名を入力してください"
       not_saved:
-        name: "ユーザ名を入力してください"
-        email: "Eメールを入力してください"
-        password: "パスワードを入力してください"
-        password_confirmation: "パスワードは8文字以上で入力してください"
-        # one: "%{resource}は保存できませんでした: 1つのエラーがあります"
-        # other: "%{resource}は保存できませんでした: %{count}つのエラーがあります"
+      email: "Eメールを入力してください"
+      password: "パスワードを入力してください"
+      password_confirmation: "パスワードは8文字以上で入力してください"
+      # one: "%{resource}は保存できませんでした: 1つのエラーがあります"
+      # other: "%{resource}は保存できませんでした: %{count}つのエラーがあります"
   devise:
     sessions:
       signed_in: "ログインしました"
@@ -36,8 +36,12 @@ ja:
       unauthenticated: "ログインして再度アクセスしてください"
       not_found_in_database: "アカウントが見つかりませんでした"
       unauthenticated: "このページにアクセスするためにはログインが必要です"
-      invalid: "ユーザー名かパスワードが違います"      
+      invalid: "ユーザー名かパスワードが違います"    
+      already_authenticated: "ログイン中はアクセスできません"
     registrations:
       destroyed: "アカウントを削除しました"
       signed_up: "アカウントの作成が完了しました"
+      updated: "ユーザー情報を更新しました"
+    passwords:
+      no_token: "再設定用のURLからアクセスしてください"
       
