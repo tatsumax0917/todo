@@ -49,10 +49,5 @@ class TasksController < ApplicationController
       params.require(:task).permit(:content, :done)
     end
 
-    def logged_in?
-      unless user_signed_in?
-        flash[:alert] = "ログインしてください"
-        redirect_to root_path
-      end
-    end
+    
   end

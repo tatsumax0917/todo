@@ -36,6 +36,7 @@ ja:
       unauthenticated: "ログインして再度アクセスしてください"
       not_found_in_database: "アカウントが見つかりませんでした"
       unauthenticated: "このページにアクセスするためにはログインが必要です"
+      invalid: "ユーザー名かパスワードが違います"      
     registrations:
       destroyed: "アカウントを削除しました"
       signed_up: "アカウントの作成が完了しました"

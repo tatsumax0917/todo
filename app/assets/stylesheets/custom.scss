@@ -48,18 +48,22 @@ a {
     width: 20px;
   }
   label {
-    margin-top: 20px;
+    margin: 20px 0 5px;
   }
 }
 
-label.required:after {
-  content: " *";
-  color: red;
+
+form > .field{
+  height: 110px;
 }
-form > .field{ height: 110px;}
+form > .login-checkbox {
+  height: auto;
+}
+
 .form-control::placeholder {
   color: rgb(180, 180, 180) ;
 }
+
 // error style
 .inline-alert {
   padding: 0;

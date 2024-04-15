@@ -1,19 +1,21 @@
 <h2>ログイン</h2>
-<%= bootstrap_form_with(model: resource, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :name %>
     <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control mb-4 mt-2' %>
-    
+    <%= render 'partials/error', attribute: :name %>
   </div>
 
   <div class="field">
+    <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "current-password", class: 'form-control mb-4 mt-2' %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field"> 
+    <div class="field login-checkbox"> 
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me, "ログイン状態を維持する" %>
     </div>

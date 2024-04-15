@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
     # 例: ユーザーがログインした後、root_pathに遷移する場合
     root_path
   end
+
   protected
 
     def configure_permitted_parameters
@@ -12,5 +13,11 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
     end
 
+    def logged_in?
+      unless user_signed_in?
+        flash[:alert] = "ログインしてください"
+        redirect_to root_path
+      end
+    end
 
 end
