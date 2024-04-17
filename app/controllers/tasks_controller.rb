@@ -9,7 +9,11 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build(task_params)
     if @task.save
-      redirect_to root_path
+
+      @tasks = Task.where(user_id: current_user.id).order(done: :asc)
+
+      
+      # redirect_to root_path
     end
   end
 
@@ -38,6 +42,8 @@ class TasksController < ApplicationController
     @task.done = !@task.done
 
     if @task.update(task_params)
+      @tasks = Task.where(user_id: current_user.id).order(done: :asc)
+
       respond_to do |format|
         format.turbo_stream
       end
