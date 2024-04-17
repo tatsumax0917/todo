@@ -9,11 +9,11 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build(task_params)
     if @task.save
-
       @tasks = Task.where(user_id: current_user.id).order(done: :asc)
-
-      
       # redirect_to root_path
+    else
+      @tasks = Task.where(user_id: current_user.id).order(done: :asc)
+      render 'tasks/index', status: :unprocessable_entity
     end
   end
 
