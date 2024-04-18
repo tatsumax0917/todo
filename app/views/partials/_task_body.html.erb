@@ -13,7 +13,7 @@
           <%= link_to edit_task_path(task.id), class: "btn fs-5" do %>
             <i class="bi bi-pencil"></i>
           <% end %>
-          <%= link_to task_path(task.id), class: "btn fs-5", data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } do %>
+          <%= link_to task_path(task.id), id: "task_delete", class: "btn fs-5", data: { turbo_method: :delete, turbo_confirm: "削除しますか？" } do %>
             <i class="bi bi-trash"></i>
           <% end %>
         </div>

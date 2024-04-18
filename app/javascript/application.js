@@ -15,9 +15,11 @@ window.$ = jquery
 
 // 定数
 const task_creat_form = document.getElementById('task_create_form');
+const task_delete = document.getElementById('task_delete');
 
 // タスク登録を登録したらフォームを空欄にリセットする
 document.addEventListener("turbo:submit-end", function(){
   task_creat_form.value = '';
-  console.log("submit-end");
 });
+
+
