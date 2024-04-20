@@ -17,7 +17,7 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-  <p class="fs-6 text-warning my-4">パスワードを変更する場合は<br>現在のパスワードと新しいパスワードを入力してください</p>
+  <p class="fs-6 text-warning my-4">ユーザー名 / Eメールの変更には<br>現在のパスワードの入力は不要です</p>
 
   <div class="field">
     <%= f.label :current_password, "現在のパスワード" %> 

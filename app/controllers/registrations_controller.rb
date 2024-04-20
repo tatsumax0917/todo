@@ -1,11 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
   # 基本的にはアクセス制限
-  before_action :logged_in?
+  before_action :logged_in?, except: [:new, :create]
   # ログインしているユーザーでも/users/cancelにアクセスできるようにする
   skip_before_action :require_no_authentication, only: [:cancel]
 
   def cancel
-    # アクセス制限されたページのロジックを記述する
   end
 
   def update
