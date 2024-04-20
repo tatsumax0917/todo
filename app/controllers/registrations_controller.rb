@@ -21,11 +21,8 @@ class RegistrationsController < Devise::RegistrationsController
       else
         flash.now[:alert] = "パスワードを正しく入力してください"
         render 'devise/registrations/edit', status: :unprocessable_entity
-
       end
     end
-
-
   end
 
   private
