@@ -25,7 +25,7 @@ ja:
       invalid_token: "トークンが無効です"
       timeout: "セッションがタイムアウトしました。もう一度ログインしてください。"
       name: "ユーザ名を入力してください"
-      not_saved:
+      not_saved: "x"
       email: "Eメールを入力してください"
       password: "パスワードを入力してください"
       password_confirmation: "パスワードは8文字以上で入力してください"

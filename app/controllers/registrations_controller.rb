@@ -7,21 +7,18 @@ class RegistrationsController < Devise::RegistrationsController
   def cancel
   end
 
+
   def update
-    # パスワードの確認をスキップしてメールアドレスを更新する
-    if params[:user][:password].empty?
-      resource.update_without_password(user_params)
-      flash[:notice] = "ユーザー情報を更新しました"
-      redirect_to edit_user_registration_path
-    else
-      if resource.update_with_password(password_params)
-      flash[:notice] = "パスワードが変更されましたので再度ログインしてください"
-      redirect_to new_user_session_path
-      else
-        flash.now[:alert] = "パスワードを正しく入力してください"
-        render 'devise/registrations/edit', status: :unprocessable_entity
-      end
+    # 現在のパスワードの入力が必須であることを確認
+    if params[:user][:current_password].blank?
+      # 現在のパスワードが空の場合はエラーメッセージを追加して再度表示する
+      resource.errors.add(:current_password)
+      render :edit, status: :unprocessable_entity
+      return
     end
+    resource.update_without_password(user_params)
+
+    super
   end
 
   private
@@ -30,7 +27,5 @@ class RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:name, :email)
   end
 
-  def password_params
-    params.require(:user).permit(:name, :email, :current_password, :password, :password_confirmation)
-  end
+
 end
