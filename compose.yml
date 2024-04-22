@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: tatsumax123/my_images:rails-sqlite
+    build: .
     volumes:
       - .:/app
 
