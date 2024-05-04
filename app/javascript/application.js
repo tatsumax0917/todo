@@ -6,20 +6,15 @@ import "bootstrap"
 import jquery from "jquery"
 window.$ = jquery
 
-
 // console.log("js ok");
 
 // $(function(){
-//   alert('ok');
-// });
-
-// 定数
-const task_creat_form = document.getElementById('task_create_form');
-const task_delete = document.getElementById('task_delete');
-
-// タスク登録を登録したらフォームを空欄にリセットする
-document.addEventListener("turbo:submit-end", function(){
-  task_creat_form.value = '';
+  //   alert('ok');
+  // });
+  // タスク登録を登録したらフォームを空欄にリセットする
+  document.addEventListener("turbo:submit-end", function(){
+  const task_create_form = document.getElementById('task_create_form');
+  if (task_create_form) {
+    task_create_form.value = '';
+  }
 });
-
-

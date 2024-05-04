@@ -46,8 +46,6 @@ gem "rails-i18n"
 # インラインバリデーション
 gem 'bootstrap_form'
 
-
-
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
@@ -63,6 +61,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem 'dotenv-rails'
 end
 
 group :development do
