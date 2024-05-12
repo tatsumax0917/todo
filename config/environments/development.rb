@@ -37,7 +37,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
 
@@ -73,27 +73,4 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
-
-  # ----------------------------------
-  # Deviseでのメール認証の設定
-  # ---------------------------------
-
-  # ActionMailerが電子メールを送信するためのデリバリメソッド
-  config.action_mailer.delivery_method = :smtp
-
-  # メールの送信に失敗した場合にエラーを発生させる
-  config.action_mailer.raise_delivery_errors = true
-
-  # 実際にメールを送信するかどうか
-  config.action_mailer.perform_deliveries = true
-  host = 'host.docker.internal'
-  config.action_mailer.default_url_options = { host: host }
-  ActionMailer::Base.smtp_settings = {
-    :port           => 587,
-    :address        => 'smtp.mailgun.org',
-    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => host,
-    :authentication => :plain,
-  }
 end

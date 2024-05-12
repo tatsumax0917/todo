@@ -32,9 +32,6 @@ ja:
       # one: "%{resource}は保存できませんでした: 1つのエラーがあります"
       # other: "%{resource}は保存できませんでした: %{count}つのエラーがあります"
   devise:
-    confirmations:
-      confirmed: "本人確認が完了しましたのでログインしてください"
-      send_instructions: "入力したメールアドレスに届いたメールを確認してください"
     sessions:
       signed_in: "ログインしました"
       signed_out: "ログアウトしました"
@@ -48,7 +45,6 @@ ja:
       destroyed: "アカウントを削除しました"
       signed_up: "アカウントの作成が完了しました"
       updated: "ユーザー情報を更新しました"
-      signed_up_but_unconfirmed: "メールのリンクをクリックしてアカウントを有効にしてください"
     passwords:
       no_token: "再設定用のURLからアクセスしてください"
       

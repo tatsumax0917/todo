@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     # ログイン後の遷移先を指定
     # 例: ユーザーがログインした後、root_pathに遷移する場合
-    tasks_path
+    root_path
   end
 
   protected
