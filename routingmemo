@@ -13,4 +13,5 @@ edit_user_registration   GET    /users/edit(.:format)            devise/registra
     user_registration    PATCH  /users(.:format)                 devise/registrations#update
                          PUT    /users(.:format)                 devise/registrations#update
                          DELETE /users(.:format)                 devise/registrations#destroy
-                         POST   /users(.:format)                 devise/registrations#create    
+                         POST   /users(.:format)                 devise/registrations#create
+ 
