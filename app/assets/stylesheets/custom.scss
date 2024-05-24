@@ -32,6 +32,7 @@ a {
   }
 }
 
+
 .done-task {
   color: rgb(158, 73, 48);
   font-weight: bold;
@@ -50,6 +51,21 @@ a {
   label {
     margin: 20px 0 5px;
   }
+  .user-edit {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .field, .actions {
+    input {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .user-edit {
+      width: 100%;
+    }
+  }
 }
 
 
@@ -62,6 +78,20 @@ form > .login-checkbox {
 
 .form-control::placeholder {
   color: rgb(180, 180, 180) ;
+}
+
+// アカウント削除
+.cancel-page .title {
+  margin: 50px 0;
+}
+
+@media screen and (max-width: 450px) {
+  .cancel-page.title {
+    margin: 50px 0;
+  }
+  .cancel-page.text {
+    margin-bottom: 50px;
+  }
 }
 
 // error style

@@ -27,25 +27,26 @@
 
   <div class="field">
     <%= f.label :password, "新しいパスワード" %>
-    <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: "8～16文字で入力してください" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
     <%= render 'partials/error', attribute: :password, error_num: 0 %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation, "確認用 新しいパスワード" %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: "8～16文字で入力してください" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
     <%= render 'partials/error', attribute: :password_confirmation %>
   </div>
 
   <div class="actions">
     <%= f.submit "更新", class: 'form-control btn btn-success mb-4 mt-4' %>
   </div>
+  <div class="actions">
+    <%= link_to "タスク管理へ戻る", root_path, class: 'user-edit mx-auto form-control btn btn-secondary mb-4 mt-2' %>
+  </div>
+
+  <div class="actions">
+    <%= link_to "アカウント削除", cancel_user_registration_path, class: "user-edit mx-auto form-control btn btn-danger mb-4 mt-2" %>
+  </div>
 <% end %>
 
-<%= link_to "タスク管理へ戻る", root_path, class: 'w-50 mx-auto form-control btn btn-secondary mb-4 mt-2' %>
-
-<div>
-<%= link_to "アカウント削除", cancel_user_registration_path, class: "w-50 mx-auto  form-control btn btn-danger mb-4 mt-2" %>
-
-</div>
 

@@ -1,0 +1,93 @@
+body {
+  padding-top: 60px;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 40px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* task -> index */
+.task .task-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn .register-button {
+  margin: 300px;
+}
+
+.done-task {
+  color: rgb(158, 73, 48);
+  font-weight: bold;
+  text-decoration: line-through;
+}
+
+.field input, .actions input {
+  width: 50%;
+  margin: 0 auto;
+}
+.field input[type=checkbox], .actions input[type=checkbox] {
+  width: 20px;
+}
+.field label, .actions label {
+  margin: 20px 0 5px;
+}
+
+@media screen and (max-width: 450px) {
+  .field input, .actions input {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+form > .field {
+  height: 110px;
+}
+
+form > .login-checkbox {
+  height: auto;
+}
+
+.form-control::placeholder {
+  color: rgb(180, 180, 180);
+}
+
+.cancel-page .title {
+  margin: 50px 0;
+}
+
+@media screen and (max-width: 450px) {
+  .cancel-page.title {
+    margin: 50px 0;
+  }
+  .cancel-page.text {
+    margin-bottom: 50px;
+  }
+}
+.inline-alert {
+  padding: 0;
+  padding-top: 5px;
+  text-align: left;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.task_create_error {
+  width: 100%;
+  text-align: center;
+}
