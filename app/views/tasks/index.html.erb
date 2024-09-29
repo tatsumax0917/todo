@@ -1,0 +1,23 @@
+<%= form_with(model: @task) do |f| %>
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6 col-8">
+      <%= f.text_field :content, class: 'form-control mb-md-3 mb-2', autofocus: true, id: "task_create_form", placeholder: "タスクを入力してください" %>  
+      <% if @task.errors.include?(:content) %>
+        <div class="inline-alert text-danger task_create_error mb-3" id="error_explanation" data-turbo-cache="false">
+          <% @task.errors.full_messages_for(:content).each do |error_message| %>
+            <%= error_message %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-1">
+      <%= f.submit "登録", class: "btn btn-outline-primary mb-4" %>
+    </div>
+  </div>
+<% end %>
+
+ 
+
+<%= turbo_frame_tag "task_body" do %>
+  <%= render 'partials/task_body', task: @tasks %>
+<% end %>

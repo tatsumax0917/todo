@@ -1,0 +1,11 @@
+<%= turbo_stream.update "task_#{@task.id}_done" do %>
+  <%= render 'partials/done', task: @task %>
+<% end %> 
+
+
+<%= turbo_stream.update "task_#{@task.id}_content" do %>
+  <%= render 'partials/task_content', task: @task %>
+<% end %> 
+<%= turbo_stream.update "task_body" do %>
+  <%= render 'partials/task_body', task: @tasks %>
+<% end %>

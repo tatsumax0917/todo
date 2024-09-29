@@ -1,0 +1,108 @@
+@charset 'utf-8';
+
+body {
+  padding-top: 60px;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 40px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* task -> index */
+.task {
+  .task-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+  }
+}
+
+
+.done-task {
+  color: rgb(158, 73, 48);
+  font-weight: bold;
+  text-decoration: line-through;
+}
+
+// 編集、新規登録などのフォーム
+.field, .actions {
+  input {
+    width: 50%;
+    margin: 0 auto;
+  }
+  input[type="checkbox"] {
+    width: 20px;
+  }
+  label {
+    margin: 20px 0 5px;
+  }
+  .user-edit {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .field, .actions {
+    input {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .user-edit {
+      width: 100%;
+    }
+  }
+}
+
+
+form > .field{
+  height: 110px;
+}
+form > .login-checkbox {
+  height: auto;
+}
+
+.form-control::placeholder {
+  color: rgb(180, 180, 180) ;
+}
+
+// アカウント削除
+.cancel-page .title {
+  margin: 50px 0;
+}
+
+@media screen and (max-width: 450px) {
+  .cancel-page.title {
+    margin: 50px 0;
+  }
+  .cancel-page.text {
+    margin-bottom: 50px;
+  }
+}
+
+// error style
+.inline-alert {
+  padding: 0;
+  padding-top: 5px;
+  text-align: left;
+  margin: 0 auto;
+  width: 50%;
+}
+.task_create_error {
+  width: 100%;
+  text-align: center;
+}
